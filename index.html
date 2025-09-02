@@ -1,102 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Website</title>
-    <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            text-align: center;
-            padding: 50px 0;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            color: #1db954;
-        }
-        section {
-            margin-bottom: 50px;
-        }
-        h2 {
-            border-bottom: 2px solid #1db954;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        .skill-list, .project-list {
-            list-style: none;
-            padding: 0;
-        }
-        .skill-list li, .project-list li {
-            background: #1e1e1e;
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 5px;
-        }
-        .skill-list li {
-            display: inline-block;
-            margin-right: 10px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            border-top: 1px solid #1db954;
-        }
-        a {
-            color: #1db954;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="./css/fullStyle.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+		<title>About Me</title>
+	</head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Your Name</h1>
-            <p>Welcome to my personal website</p>
-        </header>
-        <section>
-            <h2>Skills</h2>
-            <ul class="skill-list">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Python</li>
-                <li>C++</li>
-                <li>MATLAB</li>
-                <!-- Add more skills as needed -->
-            </ul>
-        </section>
-        <section>
-            <h2>Projects</h2>
-            <ul class="project-list">
-                <li>
-                    <h3>Project Title 1</h3>
-                    <p>Description of project 1. Include details about what you did, technologies used, and the outcome.</p>
-                </li>
-                <li>
-                    <h3>Project Title 2</h3>
-                    <p>Description of project 2. Include details about what you did, technologies used, and the outcome.</p>
-                </li>
-                <!-- Add more projects as needed -->
-            </ul>
-        </section>
-    </div>
-    <footer>
-        <p>&copy; 2024 Your Name. All rights reserved.</p>
-    </footer>
+	<!-- 顶部导航栏 -->
+	<ul class="navbar">
+		<li><a class="active" href="./homepage.html">Home</a></li>
+		<li><a href="./aboutme.html">About Me</a></li>
+		<li><a href="">Experience</a></li>
+		<li><a href="">Publication</a></li>
+		<li><a href="">Mini Projects</a></li>
+		<li><a href="">Mini Notes</a></li>
+		<!-- <li id="language"><i class="fa fa-language" aria-hidden="true" /></i></li> -->
+	</ul>
+	
+	<!-- 页面主体 -->
+	<div class="container">
+		
+	    <!-- 左边个人信息栏 -->
+		<div class="sidebar">
+		  <div class="sidebar-body">
+		    <img src="./images/Zheyu Wang-LinkedIn-01.jpg" alt="My Photo">
+		    <div class="sidebar-meta">
+		      <h2 class="sidebar-name">Zheyu Wang</h2>
+		      <p class="sidebar-title"><i class="fa fa-graduation-cap"></i> MEng Candidate @ UNSW</p>
+		    </div>
+		  </div>
+		
+		  <p class="sidebar-location"><i class="fa-solid fa-location-dot"></i> Sydney, NSW, Australia</p>
+		  <!-- <p><i class="fa-solid fa-university"></i> University of New South Wales</p> -->
+		  <p class="sidebar-email"><i class="fa-solid fa-envelope"></i> <a href="mailto:qzheyu@foxmail.com">qzheyu@foxmail.com</a></p>
+		  <!-- <p> <i class="fa fa-linkedin-square"/></i> ToDo</p> -->
+		  <!-- <p> <i class="fa fa-github-square" /></i> ToDo</p> -->
+		</div>
+
+	
+	    <!-- 右边详细内容栏 -->
+	    <div class="main">
+	      <h2 class="about-me">About Me</h2>
+	      <p class="current-info">	        
+	        I am currently a Master of Engineering (Telecommunications) candidate at the University of New South Wales (UNSW), Sydney, expected to graduate in March 2026.  
+	      </p>
+		  <p class="master-thesis">	
+	        My current master's thesis focuses on automated protocol modelling for IoT systems. I design pipelines that employ lightweight local large language models (LLMs), enhanced with retrieval-augmented generation (RAG), to generate machine-readable protocol specifications in JSON format directly from RFC documents. These models can be applied to raw network traffic for deep flow inspection (DFI), supporting packet parsing and protocol identification with implications for network monitoring and cybersecurity.  
+	      </p>
+		  <p class="futher-plan">	
+	        I am seeking PhD opportunities in data science and related areas. My research interests include machine learning for communication networks, automated protocol analysis, and data-driven methods for networked systems.
+	      </p>
+	    </div>
+	</div>
+	
 </body>
 </html>

@@ -1,0 +1,96 @@
+/* ==================== 导航栏 ==================== */
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+.navbar li { float: left; width: 16%; }
+.navbar li a {
+  display: block; color: #fff; text-align: center;
+  padding: 14px 16px; text-decoration: none;
+}
+.navbar li a:hover { background-color: #111; }
+
+/* ==================== 布局容器 ==================== */
+.container {
+  display: flex; flex-wrap: wrap; margin-top: 20px;
+}
+
+/* ==================== 左侧栏（默认竖排） ==================== */
+.sidebar {
+  flex: 0 0 250px; min-width: 200px; max-width: 300px;
+  padding: 20px; background: #f5f5f5; text-align: center;
+  transition: width .25s ease, padding .25s ease;
+  border-radius: 6px;
+}
+
+.sidebar-body { /* 大屏竖排即可 */
+  display: block;
+}
+
+.sidebar img {
+  max-width: 100%; border-radius: 50%;
+  transition: transform .25s ease;
+}
+
+.sidebar-name,
+.sidebar-title { transition: font-size .25s ease, margin .25s ease; }
+
+/* 可折叠的信息（位置/邮箱）默认可见并支持过渡 */
+.sidebar-location,
+.sidebar-email {
+  overflow: hidden;
+  transition: opacity .25s ease, max-height .25s ease, margin .25s ease;
+  opacity: 1; max-height: 80px;
+}
+
+/* ==================== 右边内容区 ==================== */
+.main { flex: 1; padding: 20px; }
+
+/* ==================== 平板：上下排列 ==================== */
+@media (max-width: 768px) {
+  .container { flex-direction: column; }
+  .sidebar { width: 100%; min-width: auto; }
+  .main { width: 100%; }
+}
+
+/* ==================== 手机/极窄：水平名片样式 ==================== */
+@media (max-width: 600px) {
+  .sidebar {
+    flex: unset;        /* 不要再强行固定宽高 */
+    width: 100%;        /* 或者设成100%卡片宽度 */
+    height: auto;       /* 高度自动适配内容 */
+    display: inline-block; /* 保证只包裹内容 */
+  }
+
+
+  /* 关键：头像在左，名字与Title在右，同一行显示 */
+  .sidebar-body {
+    display: flex; align-items: center; gap: 12px;
+    justify-content: flex-start; text-align: left;
+  }
+
+  .sidebar img {
+    width: 56px; height: 56px; object-fit: cover;
+    flex: 0 0 56px; transform: none;
+  }
+
+  .sidebar-meta { display: flex; flex-direction: column; }
+
+  .sidebar-name { font-size: 16px; line-height: 1.1; margin: 0; }
+  .sidebar-title { font-size: 13px; margin: 4px 0 0 0; color: #555; }
+
+  /* 收起不重要的信息（淡出 + 合上高度） */
+  .sidebar-location,
+  .sidebar-email {
+    opacity: 0; max-height: 0; margin: 0;
+    pointer-events: none; visibility: hidden;
+  }
+}
+
+/* ==================== 无动画偏好 ==================== */
+@media (prefers-reduced-motion: reduce) {
+  .sidebar, .sidebar * { transition: none !important; }
+}
